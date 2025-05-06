@@ -1,31 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>markdpitts</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background-color: #f0f0f0;
-        }
-        
-        .logo-container {
-            text-align: center;
-        }
-        
-        img {
-            max-width: 200px; /* Adjust size as needed */
-            height: auto;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>$750 Gift Card</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #fceffc;
+      text-align: center;
+      padding-top: 30px;
+    }
+    .header {
+      background: #000;
+      color: #fff;
+      padding: 15px 0;
+      font-size: 24px;
+      font-weight: bold;
+    }
+    .sub-header {
+      background: #ff6ec7;
+      color: #fff;
+      padding: 10px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+    .container {
+      padding: 20px;
+    }
+    .card-img {
+      max-width: 300px;
+      margin: 20px auto;
+      display: block;
+      border: 3px solid #000;
+      border-radius: 10px;
+    }
+    .steps {
+      list-style: none;
+      padding: 0;
+      font-size: 18px;
+      text-align: left;
+      max-width: 300px;
+      margin: 0 auto 30px;
+    }
+    .steps li {
+      margin: 15px 0;
+      position: relative;
+      padding-left: 30px;
+    }
+    .steps li::before {
+      content: '💟';
+      position: absolute;
+      left: 0;
+    }
+    .cta-button {
+      background: #ff6ec7;
+      color: white;
+      font-size: 20px;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .footer {
+      background: #ff6ec7;
+      color: #fff;
+      padding: 10px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+    .notification {
+      display: none;
+      position: fixed;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #333;
+      color: #fff;
+      padding: 15px 30px;
+      border-radius: 10px;
+      font-size: 13px;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+    }
+    .notification.show {
+      display: block;
+      opacity: 1;
+    }
+    .notification p {
+      margin: 0;
+      font-weight: bold;
+    }
+    .name, .amount, .deals {
+      background: linear-gradient(to right, #ff0000, #800000);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  </style>
 </head>
 <body>
-    
+  <div class="header">Grab Your $750 Vouchers Now 👇</div>
+  <div class="sub-header">HERE IS HOW IT WORKS:</div>
+
+  <div class="container">
+    <img src="img\1233124b.jpg" alt="$750 SHEIN Card" class="card-img" />
+
+    <ul class="steps">
+      <li>Click The Button Below 👇</li>
+      <li>Enter Email + Basic Info 🗎</li>
+      <li>Complete Suggested Deals</li>
+      <li>Claim Your Reward 🛍️</li>
+    </ul>
+
+    <a href="https://glstrck.com/aff_c?offer_id=76&aff_id=135360"><button class="cta-button">$750 SHEIN Gift Card</button></a>
+    <br><br>
+    <a href="https://glstrck.com/aff_c?offer_id=163&aff_id=135360"><button class="cta-button">$750 Sephora Gift Card</button></a>
+  </div>
+
+  <div class="footer">FOLLOW THE STEPS TO GET YOUR $750</div>
+
+  <div id="notification" class="notification">
+    <p id="notification-text"></p>
+  </div>
+
+  <script>
+    const notifications = [
+      { name: 'Emma', amount: '$5', deals: '2 deals' },
+      { name: 'Meryl', amount: '$500', deals: '15 deals' },
+      { name: 'Alice', amount: '$250', deals: '10 deals' },
+      { name: 'Sophia', amount: '$100', deals: '5 deals' },
+      { name: 'Charlotte', amount: '$250', deals: '10 deals' },
+      { name: 'Isabella', amount: '$500', deals: '15 deals' },
+      { name: 'Eve', amount: '$750', deals: '20 deals' },
+      { name: 'Cherry', amount: '$1000', deals: '25 deals' }
+    ];
+
+    let currentIndex = 0;
+    const notificationElement = document.getElementById('notification');
+    const notificationText = document.getElementById('notification-text');
+
+    function showNotification() {
+      const { name, amount, deals } = notifications[currentIndex];
+      notificationText.innerHTML = `<span class="name">${name}</span> claimed <span class="amount">${amount}</span> after completing <span class="deals">${deals}</span>!`;
+      notificationElement.classList.add('show');
+      setTimeout(() => {
+        notificationElement.classList.remove('show');
+        setTimeout(showNotification, 1000); // Wait 1s before showing next
+      }, 5000); // Show for 5s
+      currentIndex = (currentIndex + 1) % notifications.length;
+    }
+
+    window.onload = showNotification;
+  </script>
 </body>
 </html>
