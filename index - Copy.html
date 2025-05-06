@@ -1,105 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gift Card Offer</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #FFC1CC;
-            color: #fff;
-            text-align: center;
-        }
-        .container {
-            max-width: 400px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        .instructions {
-            background-color: #6B3A47;
-            border-radius: 15px;
-            padding: 20px;
-            margin-bottom: 20px;
-        }
-        .instructions h2 {
-            margin: 0 0 10px;
-            font-size: 14px;
-        }
-        .instructions ol {
-            text-align: left;
-            padding-left: 20px;
-        }
-        .gift-card {
-            background-color: #6B3A47;
-            border-radius: 15px;
-            padding: 15px;
-            margin: 10px 0;
-            display: flex;
-            align-items: center;
-        }
-        .gift-card img {
-            width: 50px;
-            height: 50px;
-            border-radius: 10px;
-            margin-right: 15px;
-        }
-        .gift-card-text {
-            font-size: 18px;
-        }
-        .gift-card-subtext {
-            font-size: 12px;
-        }
-        .notification-box {
-            background-color: #6B3A47;
-            border-radius: 15px;
-            padding: 15px;
-            margin: 20px 0;
-            text-align: left;
-        }
-        .notification {
-            margin-bottom: 10px;
-            font-size: 14px;
-        }
-        .gradient-text {
-            background: linear-gradient(to right, #4A1A2C, #8B3A47);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-		
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gift Card Offer</title>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #FFC1CC;
+      color: #fff;
+      display: flex;
+      //justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+	  margin-top: 40px;
+    }
+
+    .container {
+      max-width: 400px;
+      width: 100%;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .instructions {
+      background-color: #6B3A47;
+      border-radius: 15px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    .instructions h2 {
+      margin: 0 0 10px;
+      font-size: 14px;
+    }
+
+    .instructions ol {
+      text-align: left;
+      padding-left: 20px;
+    }
+
+    .instructions ol li {
+      margin-bottom: 10px;
+    }
+
+    .gift-card {
+      background-color: #6B3A47;
+      border-radius: 15px;
+      padding: 15px;
+      margin: 0 0 20px 0; /* Adds more space between cards */
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .gift-card img {
+      width: 50px;
+      height: 50px;
+      border-radius: 10px;
+      margin-right: 15px;
+    }
+
+    .gift-card-text {
+      font-size: 18px;
+    }
+
+    .gift-card-subtext {
+      font-size: 12px;
+    }
+
+    .notification {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #333;
+      color: #fff;
+      padding: 15px 30px;
+      border-radius: 10px;
+      font-size: 13px;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+    }
+
+    .notification.show {
+      display: block;
+      opacity: 1;
+    }
+
+    .notification p {
+      margin: 0;
+      font-weight: bold;
+    }
+
+    .name, .amount, .deals {
+      background: linear-gradient(to right, #ff0000, #800000);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <div class="instructions">
-            <h2>INSTRUCTIONS</h2>
-            <ol>
-                <li>Click the link below 👇</li>
-                <li>Enter your email & basic info ✍️</li>
-                <li>Complete recommended deals</li>
-                <li>Claim your reward! 🛍️</li>
-            </ol>
-        </div>
+  <div class="container">
+    <div class="instructions">
+      <h2>INSTRUCTIONS</h2>
+      <ol>
+        <li>Click the link below 👇</li>
+        <li>Enter your email & basic info ✍️</li>
+        <li>Complete recommended deals</li>
+        <li>Claim your reward! 🛍️</li>
+      </ol>
+    </div>
 
-<div class="gift-card" onclick="window.location.href='https://glstrck.com/aff_c?offer_id=75&aff_id=135360'">
-    <img src="img/she1.jpg" alt="$750 Shein">
-    <div>
+    <div class="gift-card" onclick="window.location.href='https://glstrck.com/aff_c?offer_id=75&aff_id=135360'">
+      <img src="img/she1.jpg" alt="$750 Shein">
+      <div>
         <div class="gift-card-text">$750 Shein Gift Card</div>
         <div class="gift-card-subtext">Use code at checkout!</div>
+      </div>
     </div>
-</div>
 
- <div class="gift-card" onclick="window.location.href='https://glstrck.com/aff_c?offer_id=163&aff_id=135360'">
-    <img src="img/seph.png" alt="$750 Sephora">
-    <div>
+    <div class="gift-card" onclick="window.location.href='https://glstrck.com/aff_c?offer_id=163&aff_id=135360'">
+      <img src="img/seph.png" alt="$750 Sephora">
+      <div>
         <div class="gift-card-text">$750 Sephora Gift Card</div>
         <div class="gift-card-subtext">Use code at checkout!</div>
+      </div>
     </div>
-</div>
+  </div>
 
+  <div id="notification" class="notification">
+    <p id="notification-text"></p>
+  </div>
 
-   
-    </div>
+  <script>
+    const notifications = [
+      { name: 'Emma', amount: '$5', deals: '2 deals' },
+      { name: 'Meryl', amount: '$500', deals: '15 deals' },
+      { name: 'Alice', amount: '$250', deals: '10 deals' },
+      { name: 'Sophia', amount: '$100', deals: '5 deals' },
+      { name: 'Charlotte', amount: '$250', deals: '10 deals' },
+      { name: 'Isabella', amount: '$500', deals: '15 deals' },
+      { name: 'Eve', amount: '$750', deals: '20 deals' },
+      { name: 'Cherry', amount: '$1000', deals: '25 deals' }
+    ];
+
+    let currentIndex = 0;
+    const notificationElement = document.getElementById('notification');
+    const notificationText = document.getElementById('notification-text');
+
+    function showNotification() {
+      const { name, amount, deals } = notifications[currentIndex];
+      notificationText.innerHTML = `<span class="name">${name}</span> claimed <span class="amount">${amount}</span> after completing <span class="deals">${deals}</span>!`;
+      notificationElement.classList.add('show');
+      setTimeout(() => {
+        notificationElement.classList.remove('show');
+        setTimeout(showNotification, 1000);
+      }, 5000);
+      currentIndex = (currentIndex + 1) % notifications.length;
+    }
+
+    window.onload = showNotification;
+  </script>
 </body>
 </html>
