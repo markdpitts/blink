@@ -59,9 +59,9 @@
       background-color: #f2f1f1;
       border-radius: 15px;
       padding-left: 20px;
-	  padding-right: 20px;
+      padding-right: 20px;
       padding-bottom: 0;
-	  padding-top: 0;
+      padding-top: 0;
       margin-bottom: 15px;
       color: #000;
       font-size: 15px;
@@ -85,15 +85,25 @@
       color: #000;
     }
 
-    .gift-card {
-      background-color: #6B3A47;
-      border-radius: 15px;
-      padding: 10px;
-      margin: 0 0 20px 0;
-      display: flex;
-      align-items: center;
-      text-decoration: none;
-      color: inherit;
+	.gift-card {
+	  background-color: #6B3A47;
+	  border-radius: 15px;
+	  padding: 10px;
+	  margin: 0 0 20px 0;
+	  display: flex;
+	  align-items: center;
+	  text-decoration: none;
+	  color: inherit;
+	  cursor: pointer; /* makes it feel clickable */
+	  -webkit-user-select: none;
+	  -moz-user-select: none;
+	  -ms-user-select: none;
+	  user-select: none;
+	}
+
+
+    .gift-card-second {
+      margin-bottom: 150px; /* Added 100px space below the second gift card */
     }
 
     .gift-card img {
@@ -127,6 +137,7 @@
       z-index: 1000;
       opacity: 0;
       transition: opacity 0.5s ease-in-out;
+      pointer-events: none; /* Makes the notification unclickable */
     }
 
     .notification.show {
@@ -163,21 +174,21 @@
       <h2>Click below to get started 👇</h2>
     </div>
   
-    <div class="gift-card" onclick="window.location.href='https://glstrck.com/aff_c?offer_id=75&aff_id=135360'">
+    <a class="gift-card" onclick="window.location.href='https://glstrck.com/aff_c?offer_id=75&aff_id=135360'">
       <img src="img/she1.jpg" alt="$750 Shein">
       <div>
         <div class="gift-card-text">$750 SHEIN Gift Card</div>
         <!-- <div class="gift-card-subtext">Use code at checkout!</div> -->
       </div>
-    </div>
+    </a>
 
-    <div class="gift-card" onclick="window.location.href='https://glstrck.com/aff_c?offer_id=163&aff_id=135360'">
+    <a class="gift-card gift-card-second" onclick="window.location.href='https://glstrck.com/aff_c?offer_id=163&aff_id=135360'">
       <img src="img/seph.png" alt="$750 Sephora">
       <div>
         <div class="gift-card-text">$750 Sephora Gift Card</div>
         <!-- <div class="gift-card-subtext">Use code at checkout!</div> -->
       </div>
-    </div>
+    </a>
   </div>
 
   <div id="notification" class="notification">
@@ -186,14 +197,56 @@
 
   <script>
     const notifications = [
-      { name: 'Emma', amount: '$5', deals: '2 deals' },
-      { name: 'Meryl', amount: '$500', deals: '15 deals' },
-      { name: 'Alice', amount: '$250', deals: '10 deals' },
-      { name: 'Sophia', amount: '$100', deals: '5 deals' },
-      { name: 'Charlotte', amount: '$250', deals: '10 deals' },
-      { name: 'Isabella', amount: '$500', deals: '15 deals' },
-      { name: 'Eve', amount: '$750', deals: '20 deals' },
-      { name: 'Cherry', amount: '$1000', deals: '25 deals' }
+ { name: 'Luna', amount: '$100', deals: '5 deals' },
+  { name: 'Hazel', amount: '$250', deals: '10 deals' },
+  { name: 'Stella', amount: '$500', deals: '15 deals' },
+  { name: 'Nova', amount: '$750', deals: '20 deals' },
+  { name: 'Aurora', amount: '$1000', deals: '25 deals' },
+  { name: 'Zara', amount: '$100', deals: '5 deals' },
+  { name: 'Ivy', amount: '$250', deals: '10 deals' },
+  { name: 'Freya', amount: '$500', deals: '15 deals' },
+  { name: 'Clara', amount: '$750', deals: '20 deals' },
+  { name: 'Violet', amount: '$1000', deals: '25 deals' },
+  { name: 'Wren', amount: '$100', deals: '5 deals' },
+  { name: 'Maya', amount: '$250', deals: '10 deals' },
+  { name: 'Jade', amount: '$500', deals: '15 deals' },
+  { name: 'Nora', amount: '$750', deals: '20 deals' },
+  { name: 'Ruby', amount: '$1000', deals: '25 deals' },
+  { name: 'Skye', amount: '$100', deals: '5 deals' },
+  { name: 'Lily', amount: '$250', deals: '10 deals' },
+  { name: 'Iris', amount: '$500', deals: '15 deals' },
+  { name: 'Mira', amount: '$750', deals: '20 deals' },
+  { name: 'Sage', amount: '$1000', deals: '25 deals' },
+  { name: 'Aria', amount: '$100', deals: '5 deals' },
+  { name: 'Daisy', amount: '$250', deals: '10 deals' },
+  { name: 'Cleo', amount: '$500', deals: '15 deals' },
+  { name: 'Poppy', amount: '$750', deals: '20 deals' },
+  { name: 'Eliza', amount: '$1000', deals: '25 deals' },
+  { name: 'Lola', amount: '$100', deals: '5 deals' },
+  { name: 'June', amount: '$250', deals: '10 deals' },
+  { name: 'Opal', amount: '$500', deals: '15 deals' },
+  { name: 'Reina', amount: '$750', deals: '20 deals' },
+  { name: 'Athena', amount: '$1000', deals: '25 deals' },
+  { name: 'Belle', amount: '$100', deals: '5 deals' },
+  { name: 'Cora', amount: '$250', deals: '10 deals' },
+  { name: 'Selah', amount: '$500', deals: '15 deals' },
+  { name: 'Livia', amount: '$750', deals: '20 deals' },
+  { name: 'Naomi', amount: '$1000', deals: '25 deals' },
+  { name: 'Zelda', amount: '$100', deals: '5 deals' },
+  { name: 'Talia', amount: '$250', deals: '10 deals' },
+  { name: 'Greta', amount: '$500', deals: '15 deals' },
+  { name: 'Demi', amount: '$750', deals: '20 deals' },
+  { name: 'Bianca', amount: '$1000', deals: '25 deals' },
+  { name: 'Joy', amount: '$100', deals: '5 deals' },
+  { name: 'Nina', amount: '$250', deals: '10 deals' },
+  { name: 'Rosa', amount: '$500', deals: '15 deals' },
+  { name: 'Tessa', amount: '$750', deals: '20 deals' },
+  { name: 'Yara', amount: '$1000', deals: '25 deals' },
+  { name: 'Leia', amount: '$100', deals: '5 deals' },
+  { name: 'Ayla', amount: '$250', deals: '10 deals' },
+  { name: 'Esme', amount: '$500', deals: '15 deals' },
+  { name: 'Indie', amount: '$750', deals: '20 deals' },
+  { name: 'Calla', amount: '$1000', deals: '25 deals' }
     ];
 
     let currentIndex = 0;
