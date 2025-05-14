@@ -1,217 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DKXEJ6NTKC"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-DKXEJ6NTKC');
-  </script>
 
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
-  <title>Blinkperk.com</title>
-  <style>
-    html, body {
-      height: 100%;
-      margin: 0;
-    }
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DKXEJ6NTKC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-    body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #f2f1f1;
-      color: #fff;
-      display: flex;
-      align-items: center;
-      flex-direction: column;
-      text-align: center;
-      margin-top: 0;
-    }
+  gtag('config', 'G-DKXEJ6NTKC');
+</script>
 
-    .container {
-      max-width: 400px;
-      width: 100%;
-      padding: 20px;
-      box-sizing: border-box;
-    }
-
-    .headline {
-      font-family: 'Poppins', sans-serif;
-      font-size: 28px;
-      font-weight: bold;
-      margin-bottom: 20px;
-      color: #000;
-    }
-
-    .headline-image {
-      width: 100%;
-      max-width: 300px;
-      height: auto;
-      border-radius: 10px;
-      margin-bottom: 20px;
-    }
-
-    .instructions {
-      font-family: 'Poppins', sans-serif;
-      background-color: #f2f1f1;
-      border-radius: 15px;
-      padding-left: 20px;
-	  padding-right: 20px;
-      padding-bottom: 0;
-	  padding-top: 0;
-      margin-bottom: 15px;
-      color: #000;
-      font-size: 15px;
-    }
-
-    .instructions h2 {
-      margin: 0 0 10px;
-      font-size: 14px;
-      color: #000;
-      font-weight: bold;
-    }
-
-    .instructions ol {
-      text-align: left;
-      padding-left: 20px;
-      margin-bottom: 15px; 
-    }
-
-    .instructions ol li {
-      margin-bottom: 10px;
-      color: #000;
-    }
-
-    .gift-card {
-      background-color: #6B3A47;
-      border-radius: 15px;
-      padding: 10px;
-      margin: 0 0 20px 0;
-      display: flex;
-      align-items: center;
-      text-decoration: none;
-      color: inherit;
-    }
-
-    .gift-card img {
-      width: 50px;
-      height: 50px;
-      border-radius: 10px;
-      margin-right: 15px;
-    }
-
-    .gift-card-text {
-      font-size: 18px;
-    }
-
-    .gift-card-subtext {
-      font-size: 12px;
-    }
-
-    .notification {
-      display: none;
-      position: fixed;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: #333;
-      color: #fff;
-      padding: 15px 30px;
-      border-radius: 10px;
-      font-size: 13px;
-      text-align: center;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-      z-index: 1000;
-      opacity: 0;
-      transition: opacity 0.5s ease-in-out;
-    }
-
-    .notification.show {
-      display: block;
-      opacity: 1;
-    }
-
-    .notification p {
-      margin: 0;
-      font-weight: bold;
-    }
-
-    .name, .amount, .deals {
-      background: linear-gradient(to right, #ff0000, #800000);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlinkPerk.com: Grab Your Gift Card</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #a4b5cf;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <div class="headline">Grab Your $750 Vouchers Now 👇</div>
-    <img src="https://images.unsplash.com/photo-1588992370249-1b0fcaf6249b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="blinkperk.com" class="headline-image">
-    <div class="instructions">
-      <h2>HERE IS HOW IT WORKS:</h2>
-      <p>You must be from 🇺🇸, 🇨🇦, 🇦🇺, 🇬🇧</p>
-      <ol>
-        <li>Enter your basics information ✍️</li>
-        <li>Complete the survey correctly ✅</li>
-        <li>Complete at least 3-5 tasks ‼️</li>
-        <li>Claim your reward! 🛍️</li>
-        <li>You will receive your voucher at the provided email 📧</li>
-      </ol>
-      <h2>Click below to get started 👇</h2>
-    </div>
-  
-    <div class="gift-card" onclick="window.location.href='https://glstrck.com/aff_c?offer_id=75&aff_id=135360'">
-      <img src="img/she1.jpg" alt="$750 Shein">
-      <div>
-        <div class="gift-card-text">$750 SHEIN Gift Card</div>
-        <!-- <div class="gift-card-subtext">Use code at checkout!</div> -->
-      </div>
-    </div>
-
-    <div class="gift-card" onclick="window.location.href='https://glstrck.com/aff_c?offer_id=163&aff_id=135360'">
-      <img src="img/seph.png" alt="$750 Sephora">
-      <div>
-        <div class="gift-card-text">$750 Sephora Gift Card</div>
-        <!-- <div class="gift-card-subtext">Use code at checkout!</div> -->
-      </div>
-    </div>
-  </div>
-
-  <div id="notification" class="notification">
-    <p id="notification-text"></p>
-  </div>
-
-  <script>
-    const notifications = [
-      { name: 'Emma', amount: '$5', deals: '2 deals' },
-      { name: 'Meryl', amount: '$500', deals: '15 deals' },
-      { name: 'Alice', amount: '$250', deals: '10 deals' },
-      { name: 'Sophia', amount: '$100', deals: '5 deals' },
-      { name: 'Charlotte', amount: '$250', deals: '10 deals' },
-      { name: 'Isabella', amount: '$500', deals: '15 deals' },
-      { name: 'Eve', amount: '$750', deals: '20 deals' },
-      { name: 'Cherry', amount: '$1000', deals: '25 deals' }
-    ];
-
-    let currentIndex = 0;
-    const notificationElement = document.getElementById('notification');
-    const notificationText = document.getElementById('notification-text');
-
-    function showNotification() {
-      const { name, amount, deals } = notifications[currentIndex];
-      notificationText.innerHTML = `<span class="name">${name}</span> claimed <span class="amount">${amount}</span> after completing <span class="deals">${deals}</span>!`;
-      notificationElement.classList.add('show');
-      setTimeout(() => {
-        notificationElement.classList.remove('show');
-        setTimeout(showNotification, 1000);
-      }, 5000);
-      currentIndex = (currentIndex + 1) % notifications.length;
-    }
-
-    window.onload = showNotification;
-  </script>
+    <img src="img\bg.jpg" alt="BlinkPerk Logo">
 </body>
 </html>
