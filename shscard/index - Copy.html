@@ -1,20 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-DKXEJ6NTKC"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-DKXEJ6NTKC');
-</script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DKXEJ6NTKC"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-DKXEJ6NTKC');
+  </script>
 
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Gift Card Offer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+  <title>Blinkperk.com</title>
   <style>
     html, body {
       height: 100%;
@@ -22,8 +21,8 @@
     }
 
     body {
-      font-family: Arial, sans-serif;
-      background-color: #FFC1CC;
+      font-family: 'Poppins', sans-serif;
+      background-color: #f2f1f1;
       color: #fff;
       display: flex;
       align-items: center;
@@ -40,41 +39,51 @@
     }
 
     .headline {
-      font-size: 32px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 28px;
       font-weight: bold;
       margin-bottom: 20px;
       color: #000;
     }
 
     .instructions {
-      background-color: #6B3A47;
+      font-family: 'Poppins', sans-serif;
+      background-color: #f2f1f1;
       border-radius: 15px;
       padding: 20px;
-      margin-bottom: 20px;
+	  padding-bottom: 0;
+      margin-bottom: 15px;
+      color: #000;
+      font-size: 15px;
     }
 
     .instructions h2 {
       margin: 0 0 10px;
       font-size: 14px;
+      color: #000;
+      font-weight: bold;
     }
 
     .instructions ol {
       text-align: left;
       padding-left: 20px;
+      margin-bottom: 15px; 
     }
 
     .instructions ol li {
       margin-bottom: 10px;
+      color: #000;
     }
 
     .gift-card {
       background-color: #6B3A47;
       border-radius: 15px;
-      padding: 15px;
+      padding: 10px;
       margin: 0 0 20px 0;
       display: flex;
       align-items: center;
-      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
     }
 
     .gift-card img {
@@ -131,20 +140,23 @@
   <div class="container">
     <div class="headline">Grab Your $750 Vouchers Now 👇</div>
     <div class="instructions">
-      <h2>INSTRUCTIONS</h2>
+      <h2>HERE IS HOW IT WORKS:</h2>
+      <p>You must be from 🇺🇸, 🇨🇦, 🇦🇺, 🇬🇧</p>
       <ol>
-        <li>Click the link below 👇</li>
-        <li>Enter your email & basic info ✍️</li>
-        <li>Complete recommended deals</li>
+        <li>Enter your basics information ✍️</li>
+        <li>Complete the survey correctly ✅</li>
+        <li>Complete at least 3-5 tasks ‼️</li>
         <li>Claim your reward! 🛍️</li>
+        <li>You will receive your voucher at the provided email 📧</li>
       </ol>
+      <h2>Click below to get started 👇</h2>
     </div>
-
-    <div class="gift-card" onclick="window.location.href='https://glstrck.com/aff_c?offer_id=76&aff_id=135360'">
+  
+    <div class="gift-card" onclick="window.location.href='https://glstrck.com/aff_c?offer_id=75&aff_id=135360'">
       <img src="img/she1.jpg" alt="$750 Shein">
       <div>
-        <div class="gift-card-text">$750 Shein Gift Card</div>
-        <div class="gift-card-subtext">Use code at checkout!</div>
+        <div class="gift-card-text">$750 SHEIN Gift Card</div>
+        <!-- <div class="gift-card-subtext">Use code at checkout!</div> -->
       </div>
     </div>
 
@@ -152,7 +164,7 @@
       <img src="img/seph.png" alt="$750 Sephora">
       <div>
         <div class="gift-card-text">$750 Sephora Gift Card</div>
-        <div class="gift-card-subtext">Use code at checkout!</div>
+        <!-- <div class="gift-card-subtext">Use code at checkout!</div> -->
       </div>
     </div>
   </div>
