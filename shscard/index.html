@@ -85,16 +85,18 @@
       color: #000;
     }
 
-    .gift-card {
-      background-color: #6B3A47;
-      border-radius: 15px;
-      padding: 10px;
-      margin: 0 0 20px 0;
-      display: flex;
-      align-items: center;
-      text-decoration: none;
-      color: inherit;
-    }
+	.gift-card {
+	  background-color: #6B3A47;
+	  border-radius: 15px;
+	  padding: 10px;
+	  margin: 0 0 20px 0;
+	  display: flex;
+	  align-items: center;
+	  text-decoration: none;
+	  color: inherit;
+	  cursor: pointer; /* makes it feel clickable */
+	}
+
 
     .gift-card-second {
       margin-bottom: 150px; /* Added 100px space below the second gift card */
@@ -168,21 +170,21 @@
       <h2>Click below to get started 👇</h2>
     </div>
   
-    <div class="gift-card" onclick="window.location.href='https://glstrck.com/aff_c?offer_id=75&aff_id=135360'">
+    <a class="gift-card" onclick="window.location.href='https://glstrck.com/aff_c?offer_id=75&aff_id=135360'">
       <img src="img/she1.jpg" alt="$750 Shein">
       <div>
         <div class="gift-card-text">$750 SHEIN Gift Card</div>
         <!-- <div class="gift-card-subtext">Use code at checkout!</div> -->
       </div>
-    </div>
+    </a>
 
-    <div class="gift-card gift-card-second" onclick="window.location.href='https://glstrck.com/aff_c?offer_id=163&aff_id=135360'">
+    <a class="gift-card gift-card-second" onclick="window.location.href='https://glstrck.com/aff_c?offer_id=163&aff_id=135360'">
       <img src="img/seph.png" alt="$750 Sephora">
       <div>
         <div class="gift-card-text">$750 Sephora Gift Card</div>
         <!-- <div class="gift-card-subtext">Use code at checkout!</div> -->
       </div>
-    </div>
+    </a>
   </div>
 
   <div id="notification" class="notification">
