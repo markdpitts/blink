@@ -68,12 +68,12 @@ a:hover, a:visited, a:focus, a:active, button:hover, button:visited, button:acti
 	max-width: 100px;
 }
 .bg-purple{
-    background-color: #ff4545;
+    background-color: #ff3939;
 }
 .btn-purple {
     color: #fff;
-    background-color:#ff4545;
-    border-color: #ff4545;
+    background-color:#ff3939;
+    border-color: #ff3939;
     border: 0;
 }
 .btn-purple:hover{
