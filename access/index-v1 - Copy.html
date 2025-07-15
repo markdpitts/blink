@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BlinkPerk Giveaway</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #f8bacc;
+      color: #fff;
+      padding: 0 20px;
+    }
+    .container {
+      max-width: 480px;
+      margin: auto;
+    }
+    .hidden-header {
+      display: none;
+    }
+    h1 {
+      font-size: 1.8rem;
+      text-align: center;
+      color: #FFD700;
+    }
+    p.subtitle {
+      text-align: center;
+      font-size: 1rem;
+      color: #d1d5db;
+    }
+    .button {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding: 15px;
+      margin: 15px 0 25px;
+      background-color: #773c4b;
+      color: #fff;
+      font-weight: 600;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 1rem;
+      text-align: center;
+    }
+    .button img {
+      position: absolute;
+      left: 15px;
+      width: 24px;
+      height: 24px;
+    }
+    .button .label {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      line-height: 1.2;
+    }
+    .button .main-text {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+    .button .sub-text {
+      font-size: 0.75rem;
+      font-weight: 400;
+    }
+    .slider-section {
+      margin: 10px 0 30px 0;
+    }
+    .slider-title {
+      font-size: 0.9rem;
+      color: #000;
+      margin-bottom: 10px;
+    }
+    .slider {
+      display: flex;
+      overflow-x: auto;
+      gap: 12px;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+    }
+    .slider img {
+      border-radius: 6px;
+      border: 2px solid #2d2d2d;
+      scroll-snap-align: start;
+      flex-shrink: 0;
+      height: auto;
+      width: auto;
+      max-height: 500px; 
+    }
+    .instructions {
+      background-color: #773c4b;
+      padding: 15px;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+    .section-title {
+      color: #fff;
+      font-size: 0.8rem;
+      margin-bottom: 10px;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    ul li {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="hidden-header">
+      <h1>🎁 You've Been Invited</h1>
+      <p class="subtitle">Unlock Limited-Time Shopping Rewards</p>
+    </div>
+
+    <div class="instructions">
+      <div class="section-title"><center>INSTRUCTIONS</center></div>
+      <ol>
+        <li>Click the link below 👇</li>
+        <li>Enter your email and basic info</li>
+        <li>Complete recommended deals</li>
+        <li>Claim your reward! 🎉</li>
+      </ol>
+    </div>
+
+    <a class="button" href="https://rewarduplevel.com/aff_c?offer_id=144&aff_id=135360">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3FWYqI7Rj3rLofyaft2Fx6Vi9I8OjJRXNIw&s" alt="Amazon logo" />
+      <span class="label">
+        <span class="main-text">$750 Amazon Gift Card</span>
+        <span class="sub-text">use code at checkout</span>
+      </span>
+    </a>
+
+    <a class="button" href="https://rewarduplevel.com/aff_c?offer_id=76&aff_id=135360">
+      <img src="https://i.pinimg.com/1200x/70/73/41/70734124a5f4b3550f28dc1e406880dc.jpg" alt="Shein logo" />
+      <span class="label">
+        <span class="main-text">$750 Shein Gift Card</span>
+        <span class="sub-text">use code at checkout</span>
+      </span>
+    </a>
+
+    <a class="button" href="https://rewarduplevel.com/aff_c?offer_id=163&aff_id=135360">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtt2HDfrtDjEvH47rAMnX9hgFMqk5EL3ITgA&s" alt="Sephora logo" />
+      <span class="label">
+        <span class="main-text">$750 Sephora Gift Card</span>
+        <span class="sub-text">use code at checkout</span>
+      </span>
+    </a>
+
+    <a class="button" href="https://rewarduplevel.com/aff_c?offer_id=440&aff_id=135360">
+      <img src="https://static.vecteezy.com/system/resources/previews/024/131/427/non_2x/zara-brand-symbol-white-logo-clothes-design-icon-abstract-illustration-with-black-background-free-vector.jpg" alt="Zara logo" />
+      <span class="label">
+        <span class="main-text">$750 Zara Gift Card</span>
+        <span class="sub-text">use code at checkout</span>
+      </span>
+    </a>
+
+    <br>
+
+    <div class="slider-section">
+      <div class="slider-title"><strong><center>Recently Claimed!</center></strong></div>
+      <div class="slider">
+        <img src="img/ss1.jpg" alt="Shein proof" width="300" height="500" />
+        <img src="img/ss2.jpg" alt="Shein proof" width="300" height="500" />
+      </div>
+    </div>
+  </div>
+</body>
+</html>
