@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BlinkPerk Giveaway</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:'Inter',sans-serif;
+      background:#f8bacc;
+      color:#fff;
+      padding:0 20px;
+    }
+    .container{max-width:480px;margin:auto}
+    .hidden-header{display:none}
+    h1{font-size:1.8rem;text-align:center;color:#FFD700}
+    p.subtitle{text-align:center;font-size:1rem;color:#d1d5db}
+
+    /* reset margin on buttons */
+    .button{
+      position:relative;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      width:100%;
+      padding:15px;
+      margin:0;                /* no outer gap */
+      background:#773c4b;
+      color:#fff;
+      font-weight:600;
+      border:none;
+      border-radius:8px;
+      text-decoration:none;
+      font-size:1rem;
+      text-align:center;
+    }
+    /* add 15 px top gap only when a button follows another button */
+    .button + .button{margin-top:15px;}
+
+    .button img{
+      position:absolute;
+      left:15px;
+      width:24px;
+      height:24px;
+      object-fit:cover;
+      border-radius:4px;
+    }
+	/* add 15 px space above the first button in the list */
+.container .button:first-of-type {
+  margin-top: 15px;
+}
+
+    .label{display:flex;flex-direction:column;align-items:center;line-height:1.2}
+    .main-text{font-size:1rem;font-weight:600}
+    .sub-text{font-size:.75rem;font-weight:400}
+
+    .instructions{background:#773c4b;padding:15px;border-radius:10px;margin-top:20px}
+    .section-title{color:#fff;font-size:.8rem;margin-bottom:10px;text-align:center}
+    ol{padding-left:20px}ol li{margin-bottom:10px}
+
+    #rotating{display:flex;flex-direction:column}
+    .slider-section{margin:10px 0 30px}
+    .slider-title{font-size:.9rem;color:#000;margin-bottom:10px;text-align:center}
+    .slider{display:flex;overflow-x:auto;gap:12px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
+    .slider img{border-radius:6px;border:2px solid #2d2d2d;scroll-snap-align:start;flex-shrink:0;max-height:500px}
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- instructions -->
+    <div class="instructions">
+      <div class="section-title">INSTRUCTIONS</div>
+      <ol>
+        <li>Click the link below 👇</li>
+        <li>Enter your email and basic info</li>
+        <li>Complete recommended deals</li>
+        <li>Claim your reward! 🎉</li>
+      </ol>
+    </div>
+
+    <!-- core offers -->
+    <a class="button" href="https://rewarduplevel.com/aff_c?offer_id=76&aff_id=135360">
+      <img src="https://i.pinimg.com/1200x/70/73/41/70734124a5f4b3550f28dc1e406880dc.jpg" alt="Shein">
+      <span class="label">
+        <span class="main-text">$750 Shein Gift Card</span>
+        <span class="sub-text">use code at checkout</span>
+      </span>
+    </a>
+
+    <a class="button" href="https://rewarduplevel.com/aff_c?offer_id=163&aff_id=135360">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtt2HDfrtDjEvH47rAMnX9hgFMqk5EL3ITgA&s" alt="Sephora">
+      <span class="label">
+        <span class="main-text">$750 Sephora Gift Card</span>
+        <span class="sub-text">use code at checkout</span>
+      </span>
+    </a>
+
+    <!-- rotating offers injected here -->
+    <div id="rotating"></div>
+
+    <!-- proof slider -->
+    <div class="slider-section">
+      <div class="slider-title"><strong>Recently Claimed!</strong></div>
+      <div class="slider">
+        <img src="img/ss1.jpg" alt="proof1" width="300">
+        <img src="img/ss2.jpg" alt="proof2" width="300">
+      </div>
+    </div>
+  </div>
+
+<script>
+const rotatingPool=[
+  {link:"https://rewarrdsgiant.com/aff_c?offer_id=440&aff_id=135360",logo:"https://static.vecteezy.com/system/resources/previews/024/131/427/non_2x/zara-brand-symbol-white-logo-clothes-design-icon-abstract-illustration-with-black-background-free-vector.jpg",name:"$750 Zara Gift Card"},
+  {link:"https://rewarrdsgiant.com/aff_c?offer_id=311&aff_id=135360",logo:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTctfE4oDwcLSCqohQGcprcSflUdtWRWmbIww&s",name:"$750 Fashion Nova Card"},
+  {link:"https://rewarduplevel.com/aff_c?offer_id=113&aff_id=135360",logo:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvoEOf1w1K7rMn8pw68NhLJcOgVqgwjjEacg&s",name:"$750 Skims Card"},
+  {link:"https://rewarrdsgiant.com/aff_c?offer_id=196&aff_id=135360",logo:"https://i.pinimg.com/736x/e7/16/9c/e7169c1ffa2da5bfece0ad37c6c850e6.jpg",name:"$750 H&M Gift Card"},
+  {link:"https://rewarrdsgiant.com/aff_c?offer_id=435&aff_id=135360",logo:"https://legitgrails.com/cdn/shop/files/lululemon_logo.webp?v=1720680749",name:"$750 Lululemon Card"},
+  {link:"https://rewarduplevel.com/aff_c?offer_id=295&aff_id=135360",logo:"https://play-lh.googleusercontent.com/o2E4IZJgqRl4QxFQ4Ho8kA5K_iEmjo610Rju58Aml3AW_u4c84TRHT001KR6O2-k7uU",name:"$750 Princess Polly"}
+];
+
+function shuffle(a){return[...a].sort(()=>0.5-Math.random());}
+function renderRotating(){
+  const zone=document.getElementById('rotating');
+  zone.innerHTML='';
+  shuffle(rotatingPool).slice(0,2).forEach(o=>{
+    const a=document.createElement('a');
+    a.className='button';
+    a.href=o.link;
+    a.innerHTML=`<img src="${o.logo}" alt="${o.name}"><span class="label"><span class="main-text">${o.name}</span><span class="sub-text">use code at checkout</span></span>`;
+    zone.appendChild(a);
+  });
+}
+window.onload=renderRotating;
+</script>
+</body>
+</html>
