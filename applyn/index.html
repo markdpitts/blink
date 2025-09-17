@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlinkPerk</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        :root {
+            --netflix-red: #E50914;
+            --background-dark: #1A1A1A;
+            --text-light: #f5f5f5;
+            --text-secondary: #ccc;
+            --glow-color: rgba(229, 9, 20, 0.75);
+            --border-glow-color: rgba(229, 9, 20, 0.5);
+            --card-background: #282828;
+            --card-border: rgba(255, 255, 255, 0.08);
+            --verified-color: #4CAF50;
+            --light-grey-text: #A0A0A0;
+            --red-text-strong: #FF5252;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--background-dark);
+            color: var(--text-light);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+            overflow-y: scroll; 
+            position: relative;
+            text-align: center;
+        }
+
+        /* --- Background Effects --- */
+        .background-gradient {
+            position: absolute;
+            width: 150vmax;
+            height: 150vmax;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: radial-gradient(circle, var(--netflix-red) 0%, transparent 40%);
+            filter: blur(200px);
+            opacity: 0.1;
+            animation: rotateGradient 25s infinite linear;
+            z-index: 0;
+        }
+
+        @keyframes rotateGradient {
+            from { transform: translate(-50%, -50%) rotate(0deg); }
+            to { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image:
+                radial-gradient(1px 1px at 20% 30%, var(--glow-color), transparent),
+                radial-gradient(1px 1px at 80% 10%, var(--glow-color), transparent),
+                radial-gradient(1px 1px at 50% 70%, var(--glow-color), transparent),
+                radial-gradient(2px 2px at 90% 90%, var(--glow-color), transparent),
+                radial-gradient(2px 2px at 10% 85%, var(--glow-color), transparent);
+            animation: moveParticles 60s infinite linear;
+            z-index: 0;
+        }
+        
+        @keyframes moveParticles {
+            from { background-position: 0 0; }
+            to { background-position: 1000px 1000px; }
+        }
+
+        /* --- Main Content Container --- */
+        .main-container {
+            max-width: 400px;
+            width: 90%;
+            padding: 40px 0;
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+        }
+
+        /* --- Section Styling --- */
+        section {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        section h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+            color: var(--text-light);
+            text-shadow: 0 0 8px rgba(255,255,255,0.2);
+        }
+        section p.section-subtext {
+            font-size: 0.95rem;
+            color: var(--light-grey-text);
+            max-width: 300px;
+            line-height: 1.4;
+        }
+
+        /* --- Header Section (Top) --- */
+        .header-section {
+            gap: 15px;
+            padding-top: 20px;
+        }
+        .top-icon {
+            background-color: #FFC107;
+            width: 80px;
+            height: 80px;
+            border-radius: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 15px rgba(255, 193, 7, 0.5), 0 0 30px rgba(255, 193, 7, 0.3);
+            margin-bottom: 10px;
+        }
+        .top-icon i {
+            font-size: 3rem;
+            color: white;
+            text-shadow: 0 0 5px rgba(0,0,0,0.3);
+        }
+
+        .now-hiring {
+            background-color: var(--netflix-red);
+            color: var(--text-light);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            box-shadow: 0 0 10px var(--glow-color);
+        }
+
+        .main-headline h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            line-height: 1.1;
+            color: var(--text-light);
+            margin-top: 20px;
+            text-shadow: 0 0 10px rgba(255,255,255,0.1), 0 0 20px rgba(255,255,255,0.05);
+        }
+        .main-headline h1 .netflix-red {
+            color: var(--netflix-red);
+        }
+        
+        .sub-headline {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            margin-top: 15px;
+            line-height: 1.4;
+            max-width: 320px;
+        }
+        .sub-headline strong {
+            color: var(--text-light);
+        }
+
+        /* --- Testimonial Card --- */
+        .testimonial-card {
+            background-color: var(--card-background);
+            border-radius: 15px;
+            padding: 20px;
+            width: 100%;
+            text-align: left;
+            box-shadow: 0 0 15px rgba(0,0,0,0.5), inset 0 0 5px rgba(255,255,255,0.05);
+            border: 1px solid var(--card-border);
+        }
+        .testimonial-card-content {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+        .testimonial-card .card-icon {
+            background-color: var(--netflix-red);
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-shrink: 0;
+            box-shadow: 0 0 10px var(--glow-color);
+            margin-top: 5px;
+        }
+        .testimonial-card .card-icon i {
+            font-size: 1.3rem;
+            color: var(--text-light);
+        }
+        .testimonial-card .card-text {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+        .card-text .quote {
+            font-style: italic;
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+        }
+        .card-text .signature {
+            font-weight: 600;
+            color: var(--text-light);
+            width: 100%;
+        }
+        .card-text .verified-by {
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--verified-color);
+            margin-top: 4px;
+            width: 100%;
+        }
+        .card-text .verified-by i {
+            margin-right: 5px;
+        }
+
+
+        /* --- CTA Button --- */
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background-color: var(--netflix-red);
+            color: var(--text-light);
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-decoration: none;
+            padding: 15px 40px;
+            border-radius: 50px;
+            border: 2px solid transparent;
+            box-shadow: 0 0 15px var(--glow-color), 0 0 25px var(--glow-color), inset 0 0 10px rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease-in-out;
+            width: 100%;
+            max-width: 300px;
+            margin-top: 20px;
+        }
+        .cta-button i {
+            font-size: 1.1em;
+        }
+        .cta-button:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 25px var(--glow-color), 0 0 45px var(--glow-color), inset 0 0 15px rgba(255, 255, 255, 0.3);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .join-text {
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        /* --- How to Apply Section --- */
+        .how-to-apply .steps-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            width: 100%;
+            max-width: 300px;
+        }
+        .how-to-apply .step-item {
+            background-color: var(--card-background);
+            border-radius: 15px;
+            padding: 20px;
+            border: 1px solid var(--card-border);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+        }
+        .how-to-apply .step-icon {
+            background-color: rgba(255,255,255,0.05);
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+        .how-to-apply .step-icon i {
+            font-size: 1.8rem;
+            color: var(--netflix-red);
+            text-shadow: 0 0 8px var(--glow-color);
+        }
+        .how-to-apply .step-item h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-light);
+        }
+        .how-to-apply .step-item p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.4;
+        }
+
+        /* --- Important Info Section --- */
+        .important-info {
+            background-color: rgba(229, 9, 20, 0.15);
+            border: 1px solid var(--netflix-red);
+            border-radius: 15px;
+            padding: 20px;
+            width: 100%;
+            max-width: 320px;
+            margin-top: 30px;
+            box-shadow: 0 0 15px rgba(229, 9, 20, 0.4);
+        }
+        .important-info p {
+            font-size: 0.85rem;
+            color: var(--red-text-strong);
+            line-height: 1.4;
+        }
+        .important-info strong {
+            font-weight: 600;
+        }
+
+        /* --- Footer --- */
+        footer {
+            width: 100%;
+            padding: 30px 20px;
+            font-size: 0.8rem;
+            color: var(--light-grey-text);
+            margin-top: 50px;
+        }
+        footer i {
+            margin-right: 5px;
+            color: var(--netflix-red);
+        }
+
+        /* --- Desktop / Tablet Adjustments --- */
+        @media (min-width: 768px) {
+            .main-container {
+                max-width: 700px;
+                gap: 60px;
+            }
+            .header-section { padding-top: 50px; }
+            .main-headline h1 { font-size: 3.5rem; }
+            .sub-headline { max-width: 600px; }
+            .testimonial-card { max-width: 400px; }
+            .how-to-apply .steps-grid { grid-template-columns: repeat(3, 1fr); max-width: 100%; }
+            .important-info { max-width: 500px; }
+            section h2 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="background-gradient"></div>
+    <div class="particles"></div>
+
+    <div class="main-container">
+
+        <section class="header-section">
+            <!-- <div class="top-icon"><i class="fas fa-star"></i></div> -->
+			
+            <div class="now-hiring">Now Hiring</div>
+            <div class="main-headline">
+                <h1>Get Paid to<br><span class="netflix-red">Watch Netflix</span></h1>
+                <p class="sub-headline">Earn <strong>$36/hour</strong> reviewing Netflix content from the comfort of your home. No speaking required.</p>
+            </div>
+            <a href="#" class="cta-button">Apply Now <i class="fas fa-arrow-right"></i></a>
+            <p class="join-text">Join thousands who are earning in your city!</p>
+        </section>
+
+        <section class="how-to-apply">
+            <h2>How to Apply</h2>
+            <p class="section-subtext">Three simple steps to start your journey</p>
+            <div class="steps-grid">
+                <div class="step-item">
+                    <div class="step-icon"><i class="fas fa-mouse-pointer"></i></div>
+                    <h3>1. Click 'Apply'</h3>
+                    <p>Start your Netflix reviewer journey</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-icon"><i class="fas fa-user-plus"></i></div>
+                    <h3>2. Create Profile</h3>
+                    <p>Share basic details about yourself</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-icon"><i class="fas fa-check-double"></i></div>
+                    <h3>3. Get Matched</h3>
+                    <p>Receive personalized job options</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="ready-to-start">
+            <h2>Ready to Start Your Dream Job?</h2>
+            <p class="section-subtext">Join our team of content reviewers and turn your love for streaming into a rewarding income.</p>
+            
+            <div class="testimonial-card">
+                <div class="testimonial-card-content">
+                    <div class="card-icon"><i class="fas fa-user-check"></i></div>
+                    <div class="card-text" id="testimonial-text-1">
+                        </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-card-content">
+                    <div class="card-icon"><i class="fas fa-user-check"></i></div>
+                    <div class="card-text" id="testimonial-text-2">
+                        </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-card-content">
+                    <div class="card-icon"><i class="fas fa-user-check"></i></div>
+                    <div class="card-text" id="testimonial-text-3">
+                        </div>
+                </div>
+            </div>
+
+            <div class="important-info">
+                <p><strong>Important:</strong> Netflix reviewer positions are exclusively available for US citizens.</p>
+            </div>
+            <a href="#" class="cta-button">Apply Now <i class="fas fa-arrow-right"></i></a>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Blinkperk. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+
+            const textEl1 = document.getElementById('testimonial-text-1');
+            if (textEl1) {
+                textEl1.innerHTML = `
+                    <p class="quote">“Got matched in 10 minutes while on my lunch break.”</p>
+                    <p class="signature">Jessica P. — California</p>
+                    <p class="verified-by"><i class="fas fa-check-circle"></i> Verified Reviewer</p>
+                `;
+            }
+
+            const textEl2 = document.getElementById('testimonial-text-2');
+            if (textEl2) {
+                textEl2.innerHTML = `
+                    <p class="quote">“$200 extra this month just binging shows after work.”</p>
+                    <p class="signature">Mike D. — Texas</p>
+                    <p class="verified-by"><i class="fas fa-check-circle"></i> Verified Reviewer</p>
+                `;
+            }
+
+            const textEl3 = document.getElementById('testimonial-text-3');
+            if (textEl3) {
+                textEl3.innerHTML = `
+                    <p class="quote">“Perfect side hustle while studying. I binge and get paid.”</p>
+                    <p class="signature">Samantha K. — Florida</p>
+                    <p class="verified-by"><i class="fas fa-check-circle"></i> Verified Reviewer</p>
+                `;
+            }
+        });
+    </script>
+
+</body>
+</html>
